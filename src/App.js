@@ -1,17 +1,23 @@
 import React from 'react'
-import Pictures from './Pictures'
+import Header from './components/Header';
+import Main from './components/Main';
 import './App.css';
+import { Route, Routes, useNavigate} from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      
-      <div className="container">
-
-        <h2 className='beach'>Beach Relaxation</h2>
-        <h2 className='mountain'>Mountain Escapes</h2>
-        <h2 className='city'>Urban Exploration</h2>
-      </div>
+      <Header search={search} handleChange={handleChange} handleSubmit={handleSubmit} />
+     <Main/>
+     <Routes>
+       <Route path='/' element={<Home/>}/>
+       <Route path='/Favorites' element={<Favorites/>}/>
+       <Route path='/Beach' element={<Beach/>}/>
+       <Route path='/Mountain' element={<Mountain/>}/>
+       <Route path='/City' element={<City/>}/>
+       <Route path='/Culture' element={<Culture/>}/>
+     </Routes>
     </div>
   );
 }
