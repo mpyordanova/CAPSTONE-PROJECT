@@ -2,16 +2,14 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "server.js",
- 
-  
   "scripts": {
-    
     "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
@@ -19,6 +17,5 @@
     "mongoose": "^6.4.0",
     "nodemon": "^2.0.16"
   },
-  "devDependencies": {},
   "description": ""
 }

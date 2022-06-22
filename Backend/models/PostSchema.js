@@ -3,14 +3,19 @@ const mongoose = require ('mongoose');
 
 const postSchema = mongoose.Schema ({
 title: String,
+category: String,
 describtion: String,
-creator: String,
-selectedFile:String,
+user: String,
+selectedFile:Number,
+likes:{
+    type: Number,
+    default: 0,
+},
 },
 {
     timestamps:true
 });
 
-const PostMessage = mongoose.model('PostMessage', postSchema);
+const Post= mongoose.model('Post', postSchema);
 
-export default PostMessage;
+module.exports = Post;
