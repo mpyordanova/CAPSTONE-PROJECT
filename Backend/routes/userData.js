@@ -1,6 +1,6 @@
 const userData= [
     {
-        name: 'Mariela',
+        username: 'Mariela',
         email:'mimi@gmail.com',
         password: 'justpassword'
     }

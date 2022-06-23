@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express= require ('express');
 const bodyParser= require('body-parser');
 const mongoose= require('mongoose');
@@ -9,7 +10,7 @@ const User = require('./models/UsersSchema')
 
 
 const mongoConfig = require('./config');
-require('dotenv').config();
+
 const seedRouter = require('./routes/seed');
 const clearRouter = require('./routes/clear');
 const postRouter = require('./routes/posts');
@@ -26,8 +27,8 @@ app.use(express.json());
 
 app.use('/seed', seedRouter);
 app.use('/clear', clearRouter);
-app.use('./post', postRouter);
-app.use('./user', userRouter);
+app.use('/posts', postRouter);
+app.use('/user', userRouter);
 
 
 app.get('/',(req, res)=>{

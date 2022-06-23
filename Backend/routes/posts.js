@@ -1,38 +1,81 @@
 const express = require('express');
+const { validate } = require('../models/PostSchema');
 const postRouter = express.Router();
 const Post = require('../models/PostSchema');
 const User = require('../models/UsersSchema');
-const postData = require('./postData')
+const postData = require('./postData');
 
-// index route NOT WORKING
-postRouter.get('/', (req, res)=>{
-    console.log(post)
-    res.status(200).json(post)
-})
 
-// new post  ?????
-postRouter.post('/new/',(req, res)=>{
-    console.log(postData)
-    const postData= req.body
-    Post.create(postData,(err, post)=>{
-        if(err){
-            res.status(400).json({message:err.message})
-        }else{
-            res.status(201).json({post})
+//Get all posts. index route NOT WORKING
+postRouter.get('/posts', validate, (req, res) => {
+    Post.find({ username:req.username }, (error, allPosts) => {
+        if (error) {
+            console.log(error);
+            res.status(404).json({
+                error: error
+            });
+        } else {
+            console.log(req.username)
+            console.log(allPosts)
+            res.status(200).json({
+                posts: allPosts
+            });
+        }
+    });
+});
+
+
+//Create new post-working
+postRouter.post('/add',validate, (req, res) => {
+    
+              // user name or id?
+    Post.create({...req.body  }, (err, PostData) => {
+        if (err) {
+            console.error(err)
+            res.status(400).json({ message: err.message })
+        } else {
+            res.status(201).json({ Post: PostData })
         }
     })
 })
 
-//update post
-postRouter.put('/update/:_id', (req, res)=>{
-    const _id = req.rapams._id;
-    Post.updateOne({_id:req.params._id}, req.body, (err,updatedPost)=>{
-        if(err){
-            res.status(404).json({message: 'Post not found!'})
-    }else{
-        res.status(202).json(updatedPost)
-    }
+//Get single post by ID - working - localhost:5000/posts/id
+postRouter.get('/:id', validate, (req, res) => {
+    console.log(req.username)
+    Post.findById({ _id: req.params.id }, (err, postData) => {
+        if (err) {
+            res.status(404).json({ err: "No post found!" })
+        } else {
+            res.status(200).json(postData)
+        }
     })
 })
+
+
+
+
+//Update post-working  localhost:5000/posts/update/id
+postRouter.put('/update/:_id', validate, (req, res) => {
+
+    Post.updateOne(req.body, (err, updatedPost) => {
+        if (err) {
+            res.status(404).json({ message: 'Post not found!' })
+        } else {
+            res.status(202).json(updatedPost)
+        }
+    })
+})
+
+//Delete One by ID post-Working!
+postRouter.delete('/:id', validate, (req, res) => {
+    Post.deleteOne({ _id: req.params.id }, (error, deletedPost) => {
+        if (error) {
+            res.status(404).json({ error: 'No post found' })
+        } else {
+            res.status(204).json({ message: "Successfully deleted!" })
+        }
+    })
+})
+
 
 module.exports = postRouter;

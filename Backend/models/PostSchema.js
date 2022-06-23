@@ -4,8 +4,8 @@ const mongoose = require ('mongoose');
 const postSchema = mongoose.Schema ({
 title: String,
 category: String,
-describtion: String,
-user: String,
+description: String,
+username: String,
 selectedFile:Number,
 likes:{
     type: Number,
