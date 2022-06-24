@@ -2,7 +2,7 @@ const jwt = require('jwt-simple');
 const jwtSecret = process.env.JWT_SECRET;
 const bcrypt = require('bcrypt');
 const User = require('./models/UsersSchema');
-
+//is it working?
 const validate = (req, res, next) => {
   console.log('validate')
     if (req.header('JWT-Token')) {
@@ -11,9 +11,7 @@ const validate = (req, res, next) => {
         User.findOne({ 
           username: decoded.username
         }, (error, foundUser) => {
-          console.log(foundUser)
-
-          
+          console.log(foundUser)         
           if (error) {
             console.error(error); 
             res.status(404).json({

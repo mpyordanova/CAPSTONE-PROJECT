@@ -11,16 +11,8 @@ const { validate, login } = require('../middlewares');
 const { Router } = require('express');
 
 
-//get users
-// userRouter.get('/user', (req, res) => {
-//     User.find().then((data)=>{
-// console.log(data)
-// res.status(200).json(data)
-//     })
-//     res.status(200).json(user)
-// })
 
-//Create user/ register user
+//Create user/ register user- Works!!
 userRouter.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(Number(saltRounds));
     let hashedPass = await bcrypt.hash(req.body.password, salt);
@@ -50,7 +42,7 @@ userRouter.post('/register', async (req, res) => {
 })
 
 
-//Login route
+//Login route -
 userRouter.post('/login', login, (req,res)=>{
     if(req.result){
         let encoded = jwt.encode({
@@ -65,16 +57,29 @@ userRouter.post('/login', login, (req,res)=>{
     }
 });
 
-
-
-
-//Update user
-
-
-
+//Update user- NOT WORKING YET!!!!!!!!!!
+userRouter.put('/update/:_id', (req, res)=> {
+    const _id = req.params._id;
+    User.updateOne({_id:req.params._id}, req.body, (err, updatedUser) =>{
+         if (err){
+             res.status(404).json({message: 'User not found!'})
+         }else {
+             res.status(202).json(updatedUser)
+         }
+    
+    })
+})
 
 
 //Delete user
-
+userRouter.delete('/:id', (req, res)=>{
+    User.deleteOne({_id:req.params.id},(error, deleteUser)=>{
+        if(error){
+            res.status(404).json({error: "No user found!"})
+        }else{
+            res.status(204).json({message:"Successfully deleted!"})
+        }
+    })
+})
 
 module.exports = userRouter;

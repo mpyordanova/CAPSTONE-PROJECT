@@ -8,7 +8,7 @@ const postData = require('./postData');
 
 //Get all posts. index route NOT WORKING
 postRouter.get('/posts', validate, (req, res) => {
-    Post.find({ username:req.username }, (error, allPosts) => {
+    Post.find({ username: req.username }, (error, allPosts) => {
         if (error) {
             console.log(error);
             res.status(404).json({
@@ -26,10 +26,8 @@ postRouter.get('/posts', validate, (req, res) => {
 
 
 //Create new post-working
-postRouter.post('/add',validate, (req, res) => {
-    
-              // user name or id?
-    Post.create({...req.body  }, (err, PostData) => {
+postRouter.post('/add', validate, (req, res) => {
+    Post.create({ ...req.body }, (err, PostData) => {
         if (err) {
             console.error(err)
             res.status(400).json({ message: err.message })
@@ -76,6 +74,17 @@ postRouter.delete('/:id', validate, (req, res) => {
         }
     })
 })
+
+//Like a post - 1st must login with username and password to get the JWT token.
+// 2nd use the patch request and the token inside Headers in postman to like a post
+postRouter.patch('/:id/likePost', validate, async (req, res) => {
+    const { id } = req.params;
+    const post = await Post.findById(id);
+    const updatedPost = await Post.findByIdAndUpdate(id, { likes: post.likes + 1 }, { new: true });
+    res.json(updatedPost);
+})
+
+
 
 
 module.exports = postRouter;
