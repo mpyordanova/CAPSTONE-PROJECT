@@ -44,6 +44,7 @@ const validate = (req, res, next) => {
   }
 
   const login = (req, res, next) => {
+    console.log("login middlewares")
     User.findOne({
       username: req.body.username 
     }, async (error, foundUser) => {

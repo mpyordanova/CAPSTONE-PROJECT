@@ -1,5 +1,5 @@
 const express = require('express');
-const { validate } = require('../models/PostSchema');
+const { validate } = require('../middlewares');
 const postRouter = express.Router();
 const Post = require('../models/PostSchema');
 const User = require('../models/UsersSchema');
@@ -8,6 +8,7 @@ const postData = require('./postData');
 
 //Get all posts. index route NOT WORKING
 postRouter.get('/posts', validate, (req, res) => {
+    console.log("post route")
     Post.find({ username: req.username }, (error, allPosts) => {
         if (error) {
             console.log(error);

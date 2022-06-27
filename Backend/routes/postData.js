@@ -6,6 +6,7 @@ const postData= [
     username: "Mariela" ,
     selectedFile: 0,
     likes:0,
+    // img:
 },
 {
     title:'Alaska',

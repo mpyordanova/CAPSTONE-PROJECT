@@ -5,8 +5,9 @@ const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    console.log(localStorage.jwtToken)
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:5000/posts", {
+      const response = await axios.get("http://localhost:5000/posts/posts", {
         headers: {
           "JWT-Token": localStorage.jwtToken,
         },

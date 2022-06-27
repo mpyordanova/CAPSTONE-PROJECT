@@ -44,6 +44,7 @@ userRouter.post('/register', async (req, res) => {
 
 //Login route -
 userRouter.post('/login', login, (req,res)=>{
+    console.log('user login')
     if(req.result){
         let encoded = jwt.encode({
             password:req.password,
