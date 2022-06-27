@@ -1,4 +1,4 @@
-import { makeInstaller } from "install";
+// import { makeInstaller } from "install";
 import React from "react";
 
 const Main = () => {

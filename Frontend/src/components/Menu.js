@@ -18,7 +18,7 @@ function Menu() {
           <button className='burger-menu'><GiHamburgerMenu>Menu</GiHamburgerMenu></button>
           {state?(<ul  onMouseEnter={ShowMenu}>
         <li><Link className='menu-list' to='/'>Home</Link></li><br/>
-        <li><Link className='menu-list' to='/Favorites'>My memories</Link></li><br/>
+        <li><Link className='menu-list' to='/MyAlbums'>My Albums</Link></li><br/>
         <li><Link className='menu-list' to='/Beach'>Beach Vacations</Link></li><br/>
         <li><Link className='menu-list' to='/Mountain'>Mountain Escapes</Link></li><br/>
         <li><Link className='menu-list' to='/City'>City Tours</Link></li><br/>
