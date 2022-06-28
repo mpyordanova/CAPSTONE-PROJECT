@@ -5,7 +5,8 @@ const Login = () => {
 
   const [formData, setFormData] = useState({
     username: "",
-    password: ""
+    password: "",
+    email:""
   });
 
   const [loginFormData, setLoginFormData] = useState({
@@ -40,9 +41,11 @@ console.log(loginFormData)
     <div>
       <h1>Register!</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form className="registerForm" onSubmit={handleSubmit}>
         <label htmlFor="username1">username:</label>
         <input name="username" id="username1" onChange={handleChange} />
+        <label htmlFor="email">email:</label>
+        <input type='email' name='email' id="email" onChange={handleChange}/>
         <label htmlFor="password1">Password:</label>
         <input type="password" name="password" id="password1" onChange={handleChange} />
         <input type="submit" />
@@ -52,7 +55,7 @@ console.log(loginFormData)
 
       <h1>Log In!</h1>
 
-      <form onSubmit={handleLoginSubmit}>
+      <form className="loginForm" onSubmit={handleLoginSubmit}>
         <label htmlFor="username">username:</label>
         <input name="username" id="username" onChange={handleChangeLogin} />
         <label htmlFor="password">Password:</label>

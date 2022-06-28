@@ -1,19 +1,35 @@
- import React from 'react';
+import React from "react";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import IconButton from "@mui/material/IconButton";
+import { FavoriteIcon, Note } from "@material-ui/icons";
+import { DeleteOutlined } from "@material-ui/icons";
+import { Typography } from "@material-ui/core";
+//this is the prop from Posts.js.ln.29
+//It cannot be called card or text because it's react component and can't be imported twice import it twice
+export default function Album({ post, handleDelete}) {
+  return (
+    <div>
+      <Card elevation={3}>
+        <CardHeader
+          action={
+            <IconButton onClick={() => handleDelete(post.title)}>
+              <DeleteOutlined />
+            </IconButton>
+          }
+          title={post.title}
+          subheader={post.category}
 
-function Card({post}) {
-return(
- 
- <div className="card">
-      {/* <img className="br-100 h3 w3 dib" alt={post.name} src={process.env.PUBLIC_URL + post.imgPath} /> */}
-      <div>
-        <h2>{post.title}</h2>
-        <h3>{post.category}</h3>
-        <p>{post.description}</p>
-        <h3>{post.likes}</h3>
-      </div>
-    </div> 
-    
+        />
+        <CardContent>
+          <Typography color="textSecondary">
+            {post.description}
+          </Typography>
+        </CardContent>
+      </Card>
+    </div>
   );
- }
-
-export default Card;
+}

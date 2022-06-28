@@ -1,41 +1,36 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { TextField, Button, Typography, Paper} from '@material-ui/core';
-import useStyles from './styles';
-// import { useDispatch, useSelector } from 'react-redux';  //after we create the dispatch action from action/posts we export it and import it here
-import FileBase from 'react-file-base64';   //to attach files
-// import { createPost, updatePost } from '../../actions/posts';
+// import React from "react";
+// import { useState, useEffect } from "react";
+// import { TextField, Button, Typography, Paper} from '@material-ui/core';
+// import useStyles from './styles';
+// // import { useDispatch, useSelector } from 'react-redux';  //after we create the dispatch action from action/posts we export it and import it here
+// import FileBase from 'react-file-base64';   //to attach files
+// // import { createPost, updatePost } from '../../actions/posts';
 
 
 
-const Form = ({ currentId, setCurrentId }) => {
-    const [postData, setPostData] = useState({ username: '', title: '', description: '', selectedFile: '' });
-    // const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
-    // const dispatch = useDispatch();
-    // const classes = useStyles();
-  useEffect(()=>{
-    const fetchData = async () => {
-      const response = await axios.get('http://localhost:5000/posts', {
-        headers: {
-          "JWT-Token": localStorage.jwtToken
-        }
-      });
-      console.log(response);
-      setPostData(response.data.postData);
-    }
-    fetchData();
-  }, [])
+// const Form = ({ currentId, setCurrentId }) => {
+//     const [postData, setPostData] = useState({ username: '', title: '', description: '', selectedFile: '' });
+//     // const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
+//     // const dispatch = useDispatch();
+//     // const classes = useStyles();
+//   useEffect(()=>{
+//     const fetchData = async () => {
+//       const response = await axios.get('http://localhost:5000/posts', {
+//         headers: {
+//           "JWT-Token": localStorage.jwtToken
+//         }
+//       });
+//       console.log(response);
+//       setPostData(response.data.postData);
+//     }
+//     fetchData();
+//   }, [])
     
-} 
+// } 
     
 
 
 
-
-
-
-
-// const Form = () =>{
 // return (
 //     <Paper className={classes.paper}>
 //       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>

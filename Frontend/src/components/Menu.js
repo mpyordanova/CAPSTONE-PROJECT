@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import {GiHamburgerMenu} from 'react-icons/gi'
-
+import Login from "./login"
 
 
 function Menu() {
@@ -15,6 +15,7 @@ function Menu() {
     return(
       <div className='menu'>
         <div className='dropdown-menu' onMouseEnter={ShowMenu} onMouseLeave={HideMenu}>
+     
           <button className='burger-menu'><GiHamburgerMenu>Menu</GiHamburgerMenu></button>
           {state?(<ul  onMouseEnter={ShowMenu}>
         <li><Link className='menu-list' to='/'>Home</Link></li><br/>
@@ -25,6 +26,8 @@ function Menu() {
         <li><Link className='menu-list' to='/Culture'>Culture Tours</Link></li><br/>
           </ul>):
           null}
+         
+          
         </div>
       </div>
     )

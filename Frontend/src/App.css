@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: aqua;
+  background-color: rgb(154, 238, 240);
 }
 
 
@@ -14,11 +14,14 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-size: calc(10px + 2vmin);
   color: white; 
   width: 100%;
   
+}
+.header-search{
+  size: 200px;
 }
 .search-input {
   width: 75%;
@@ -72,5 +75,67 @@ header {
 .glow-button{
   font-style: inherit;
   border: 2px solid white;
+  color: white;
+  padding: 5px 20px;
+  animation-duration: 3s;
+  animation-name: glow;
+  animation-iteration-count: infinite;
+  border: 2px solid #FFFFFF;
+    font: 700 18px/30px;
+    /* color: #FFFFFF; */
+    font-weight: 700;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    /* padding: 5px 20px; */
+}
 
+
+.glow-button:hover {
+  color: #FFFFFF;
+  box-shadow: 0px 0px 15px #ffffff;
+}
+a:active, a:hover {
+  color: #99B3C9;
+}
+a:active, a:hover {
+  outline: 0;
+}
+
+h2{
+  font-weight: bold;
+  font-size: 1em;
+  font:700 36px/44px expressway;
+  color:white;
+}
+
+
+
+
+.login{
+  size: 200px;
+}
+.beach-container{
+  background: url(Images/Sea.jpg)no-repeat center center/cover;
+  min-height: 1586px;
+  color:white;
+  padding: 0;
+  margin: 0;
+ 
+}
+.mountain-container{
+  background: url(Images/Mountain1.png)no-repeat center center/cover;
+  min-height: 1586px;
+  
+}
+.city-container{
+  background: url(Images/City.jpg)no-repeat center center/cover;
+  min-height: 1586px;
+}
+.culture-container{
+  background: url(Images/China_Wall.jpg)no-repeat center center/cover;
+  min-height: 1586px;
 }

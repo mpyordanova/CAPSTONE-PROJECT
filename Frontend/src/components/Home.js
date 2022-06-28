@@ -6,10 +6,12 @@ const Main = () => {
         <div className="Main-page">
             <div className='beach-container'>
                 <h2>Beach Relaxation</h2>
+            
                 <a href="#" className='glow-button'>START THE JOURNEY</a>
             </div>
             <div className='mountain-container'>
                 <h2>Mountain Escapes</h2>
+                
                 <a href="#" class='glow-button'>START THE JOURNEY</a>
             </div>
             <div className='city-container'>
