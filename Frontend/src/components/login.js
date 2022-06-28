@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -13,7 +14,7 @@ const Login = () => {
     username: "",
     password: ""
   });
-
+  const navigate= useNavigate()
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   }
@@ -35,6 +36,7 @@ const Login = () => {
     const response = await axios.post('http://localhost:5000/user/login', loginFormData);
     console.log(response);
     localStorage.setItem("jwtToken", response.data.jwtToken);
+    navigate('/Posts')
   }
 console.log(loginFormData)
   return (

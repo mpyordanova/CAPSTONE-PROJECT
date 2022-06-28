@@ -1,23 +1,30 @@
 .App {
   text-align: center;
-  background-color: rgb(154, 238, 240);
+  background-color: rgb(34, 139, 141);
+}
+.header-wrapper .sticky{
+  top:0px;
 }
 
-
-header {  
-  color:red;
-  position: sticky;
+.header-wrapper {  
+ max-height: 100%;
+ transform:translateZ(0) ;
+ left:0;
+/* position: fixed; */
   border-bottom: none;
   box-shadow: none;
   background-color: #506286;
-  /* background-image: url(Baloon.jpg); */
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  font-size: calc(10px + 2vmin);
   color: white; 
   width: 100%;
+  z-index: 100;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  /* background: url(Images/Canyon.jpg)no-repeat center center/cover; */
+  opacity: 0.7;
   
 }
 .header-search{
@@ -89,7 +96,7 @@ header {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    display: inline-block;
+    /* display: inline-block; */
     /* padding: 5px 20px; */
 }
 
@@ -119,23 +126,39 @@ h2{
   size: 200px;
 }
 .beach-container{
-  background: url(Images/Sea.jpg)no-repeat center center/cover;
+  /* background: url(Images/Sea.jpg)no-repeat center center/cover; */
   min-height: 1586px;
   color:white;
   padding: 0;
   margin: 0;
- 
+  
 }
 .mountain-container{
-  background: url(Images/Mountain1.png)no-repeat center center/cover;
+  /* background: url(Images/Mountain.jpg)no-repeat center center/cover; */
   min-height: 1586px;
+
   
 }
 .city-container{
-  background: url(Images/City.jpg)no-repeat center center/cover;
+  /* background: url(Images/City.jpg)no-repeat center center/cover; */
   min-height: 1586px;
 }
 .culture-container{
-  background: url(Images/China_Wall.jpg)no-repeat center center/cover;
+  /* background: url(Images/China_Wall.jpg)no-repeat center center/cover; */
   min-height: 1586px;
+}
+.card-container{
+
+  margin-top: 500px;
+}
+.main-page{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: flex-end;
+  
+}
+.header-title{
+  text-align: left;
+
 }

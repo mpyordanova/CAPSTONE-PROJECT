@@ -6,25 +6,27 @@ import { Route, Routes} from 'react-router-dom';
 import Login from './components/login';
 import Posts from './components/Posts';
 import Layout from './components/Layout';
-
+import Form from './components/Form';
+// import Switch from 'react-router-dom';
 
 
 
 const App =()=> {
-   
+
   return (
     <div className="App"> 
       <Header />
       <Routes>
-     
+     {/* <Switch> */}
        <Route path='/' element={<Home/>}/>
-       <Route path='/Posts' element={<Posts />}/> 
-       <Route path='/login' element={<Login/>}/>
+       <Route path='/Posts' element={<Posts/>}/>
+       <Route path='/Posts/layout' element={<Layout/>}/>
+       <Route path='/Form' element={<Form/>}/>
        {/* <Route path='/Beach' element={<Beach/>}/>
        <Route path='/Mountain' element={<Mountain/>}/>
        <Route path='/City' element={<City/>}/>
        <Route path='/Culture' element={<Culture/>}/> */}
- 
+ {/* </Switch> */}
      </Routes>  
     </div>
   );

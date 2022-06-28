@@ -10,13 +10,18 @@ import { DeleteOutlined } from "@material-ui/icons";
 import { Typography } from "@material-ui/core";
 //this is the prop from Posts.js.ln.29
 //It cannot be called card or text because it's react component and can't be imported twice import it twice
-export default function Album({ post, handleDelete}) {
+
+export default function Album({ post, handleDelete}) { 
+  // console.log(handleDelete, post)          //imported in posts
   return (
-    <div>
+    <div className='card-container'>
       <Card elevation={3}>
         <CardHeader
           action={
-            <IconButton onClick={() => handleDelete(post.title)}>
+            <IconButton onClick={() =>{
+               console.log('click')
+               handleDelete(post._id)
+               }}>
               <DeleteOutlined />
             </IconButton>
           }
@@ -33,3 +38,4 @@ export default function Album({ post, handleDelete}) {
     </div>
   );
 }
+

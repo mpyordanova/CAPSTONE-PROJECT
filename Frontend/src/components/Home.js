@@ -12,15 +12,15 @@ const Main = () => {
             <div className='mountain-container'>
                 <h2>Mountain Escapes</h2>
                 
-                <a href="#" class='glow-button'>START THE JOURNEY</a>
+                <a href="#" className='glow-button'>START THE JOURNEY</a>
             </div>
             <div className='city-container'>
                 <h2>Urban Exploration</h2>
-                <a href="#" class='glow-button'>START THE JOURNEY</a>
+                <a href="#" className='glow-button'>START THE JOURNEY</a>
             </div>
             <div className="culture-container">
                 <h2>Culture Tours</h2>
-                <a href="#" class='glow-button'>START THE JOURNEY</a>
+                <a href="#" className='glow-button'>START THE JOURNEY</a>
             </div>
         </div>
     )
