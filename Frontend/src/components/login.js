@@ -40,7 +40,8 @@ const Login = () => {
   }
 console.log(loginFormData)
   return (
-    <div>
+    <div className='login-box'>
+      <div className='sign-form'>
       <h1>Register!</h1>
 
       <form className="registerForm" onSubmit={handleSubmit}>
@@ -52,9 +53,9 @@ console.log(loginFormData)
         <input type="password" name="password" id="password1" onChange={handleChange} />
         <input type="submit" />
       </form>
-
+      </div>
       <hr />
-
+<div className='log-form'>
       <h1>Log In!</h1>
 
       <form className="loginForm" onSubmit={handleLoginSubmit}>
@@ -64,6 +65,7 @@ console.log(loginFormData)
         <input type="password" name="password" id="password" onChange={handleChangeLogin} />
         <input type="submit" />
       </form>
+      </div>
     </div>
   )
 }

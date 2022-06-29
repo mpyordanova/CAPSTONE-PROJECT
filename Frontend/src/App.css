@@ -5,7 +5,11 @@
 .header-wrapper .sticky{
   top:0px;
 }
-
+.navbar{
+  display: flex;
+  flex-direction: row;
+  background-color: transparent !important;
+}
 .header-wrapper {  
  max-height: 100%;
  transform:translateZ(0) ;
@@ -119,14 +123,15 @@ h2{
   color:white;
 }
 
-
-
-
-.login{
-  size: 200px;
+.login-box{
+  display: flex;
+  flex-direction: row;
 }
+
+
+
 .beach-container{
-  /* background: url(Images/Sea.jpg)no-repeat center center/cover; */
+  background: url(Images/Sea.jpg)no-repeat center center/cover;
   min-height: 1586px;
   color:white;
   padding: 0;
@@ -134,17 +139,17 @@ h2{
   
 }
 .mountain-container{
-  /* background: url(Images/Mountain.jpg)no-repeat center center/cover; */
+  background: url(Images/Mountain.jpg)no-repeat center center/cover;
   min-height: 1586px;
 
   
 }
 .city-container{
-  /* background: url(Images/City.jpg)no-repeat center center/cover; */
+  background: url(Images/City.jpg)no-repeat center center/cover;
   min-height: 1586px;
 }
 .culture-container{
-  /* background: url(Images/China_Wall.jpg)no-repeat center center/cover; */
+  background: url(Images/China_Wall.jpg)no-repeat center center/cover;
   min-height: 1586px;
 }
 .card-container{

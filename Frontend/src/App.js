@@ -7,6 +7,7 @@ import Login from './components/login';
 import Posts from './components/Posts';
 import Layout from './components/Layout';
 import Form from './components/Form';
+import Navbar from './components/Navbar';
 // import Switch from 'react-router-dom';
 
 
@@ -16,6 +17,7 @@ const App =()=> {
   return (
     <div className="App"> 
       <Header />
+      <Navbar/>
       <Routes>
      {/* <Switch> */}
        <Route path='/' element={<Home/>}/>
