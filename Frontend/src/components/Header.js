@@ -9,7 +9,7 @@ const Header = () => {
       <div className="header-line">
       
         <h1 className="Header-title" >
-        <a href="/" rel='home' className="active">From Ocean Blues to Mountain Hues</a>
+        {/* <a href="/" rel='home' className="active">From Ocean Blues to Mountain Hues</a> */}
         </h1>
       </div>
       <div className="header-search"></div>

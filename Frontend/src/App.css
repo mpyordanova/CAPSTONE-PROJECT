@@ -9,15 +9,18 @@
   display: flex;
   flex-direction: row;
   background-color: transparent !important;
+  background-color: red;
+  /* max-height: 20px; */
+  /* position:fixed; */
 }
 .header-wrapper {  
  max-height: 100%;
  transform:translateZ(0) ;
  left:0;
-/* position: fixed; */
+position: fixed;
   border-bottom: none;
   box-shadow: none;
-  background-color: #506286;
+  /* background-color: #506286; */
   /* display: flex; */
   flex-direction: row;
   align-items: center;
@@ -69,14 +72,15 @@
   position: relative;
   cursor: pointer;
   background-color: transparent;
-  color:white;
+  
   text-align: left;
   /* width: fit-content; */
 }
 .menu-list{
   text-align: left;
   color: white;
-
+  text-shadow: 5px 5px 10px black;
+  font-size: x-large;
 }
 .burger-menu{
   padding-left: 5px;
