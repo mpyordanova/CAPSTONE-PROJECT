@@ -1,7 +1,7 @@
 import React from 'react'
 // import SearchBar from './SearchBar'
 import { Link } from 'react-router-dom'
-import Login from './login'
+
 import Menu from './Menu'
  
 
@@ -16,7 +16,7 @@ const Navbar = ({ handleChange, handleSubmit}) => {
         <Link to='/login'>Login</Link>
         </div>
         <div className='login-field'>
-      <Login/>
+      
       </div>
     </div>
 

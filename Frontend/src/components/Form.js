@@ -1,20 +1,20 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Button, Paper, Container } from "@material-ui/core";
+import { Button, Paper, Container, IconButton, Input } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from '@material-ui/core/styles'
 // // import { useDispatch, useSelector } from 'react-redux';  //after we create the dispatch action from action/posts we export it and import it here
 import FileBase from "react-file-base64"; //to attach files
-import { KeyboardArrowRight } from "@material-ui/icons";
+import { KeyboardArrowRight, PhotoCamera } from "@material-ui/icons";
 import { useNavigate } from "react-router-dom";
 // import { createPost, updatePost } from '../../actions/posts';
 
 const useStyles = makeStyles({
   field: {
-    marginTop: 20,
-    marginBottom: 20,
+    marginTop: 50,
+    marginBottom: 50,
     display: "block",
   },
 });
@@ -25,7 +25,8 @@ export default function Form() {
     title:"",
     category:"",
     description:"",
-    likes:""
+    likes:"",
+    image:""
 
   })
   const navigate= useNavigate()
@@ -45,7 +46,7 @@ export default function Form() {
 
 
   return (
-    <Container>
+    <Container >
       <Typography color="textSecondary" component="h2" gutterBottom>
         Create new Album
       </Typography>
@@ -71,6 +72,12 @@ export default function Form() {
         color="secondary"
         required
       />
+       <label htmlFor="icon-button-file">
+        <Input accept="image/*" id="icon-button-file" type="file" />
+        <IconButton color="primary" aria-label="upload picture" component="span">
+          <PhotoCamera />
+        </IconButton>
+      </label>
       <Button
         onClick={handleSubmit}
         type="submit"

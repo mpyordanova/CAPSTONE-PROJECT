@@ -8,7 +8,7 @@ import Posts from './components/Posts';
 import Layout from './components/Layout';
 import Form from './components/Form';
 import Navbar from './components/Navbar';
-// import Switch from 'react-router-dom';
+
 
 
 
@@ -19,8 +19,7 @@ const App =()=> {
       <Header />
       <Navbar/>
       <Routes>
-     {/* <Switch> */}
-       <Route path='/' element={<Home/>}/>
+         <Route path='/' element={<Home/>}/>
        <Route path='/Posts' element={<Posts/>}/>
        <Route path='/Posts/layout' element={<Layout/>}/>
        <Route path='/Form' element={<Form/>}/>
@@ -28,7 +27,7 @@ const App =()=> {
        <Route path='/Mountain' element={<Mountain/>}/>
        <Route path='/City' element={<City/>}/>
        <Route path='/Culture' element={<Culture/>}/> */}
- {/* </Switch> */}
+ 
      </Routes>  
     </div>
   );

@@ -1,10 +1,13 @@
 // import { makeInstaller } from "install";
 import React from "react";
 
+
+
 const Main = () => {
     return (
         <div className="Main-page">
             <div className='beach-container'>
+            
                 <h2>Beach Relaxation</h2>
             
                 <a href="#" className='glow-button'>START THE JOURNEY</a>

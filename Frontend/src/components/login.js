@@ -25,15 +25,24 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post('http://localhost:5000/user/register', formData)
+    const response = await axios.post('http://localhost:5000/user/register', formData,{
+      headers: {
+        "JWT-Token": localStorage.jwtToken,
+      },
+    });
     console.log(response);
     localStorage.setItem("jwtToken", response.data.jwtToken)
+    navigate('/Posts')
   }
 
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
     console.log(loginFormData)
-    const response = await axios.post('http://localhost:5000/user/login', loginFormData);
+    const response = await axios.post('http://localhost:5000/user/login', loginFormData,{
+      headers: {
+        "JWT-Token": localStorage.jwtToken,
+      },
+    });
     console.log(response);
     localStorage.setItem("jwtToken", response.data.jwtToken);
     navigate('/Posts')
@@ -42,7 +51,7 @@ console.log(loginFormData)
   return (
     <div className='login-box'>
       <div className='sign-form'>
-      <h1>Register!</h1>
+      
 
       <form className="registerForm" onSubmit={handleSubmit}>
         <label htmlFor="username1">username:</label>
@@ -56,7 +65,7 @@ console.log(loginFormData)
       </div>
       <hr />
 <div className='log-form'>
-      <h1>Log In!</h1>
+     
 
       <form className="loginForm" onSubmit={handleLoginSubmit}>
         <label htmlFor="username">username:</label>

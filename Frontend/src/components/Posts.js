@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import { Container } from "@material-ui/core";
+import { Button, CardActions, Container } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles'
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import axios from "axios";
 import Album from "./Cards";
-import Form from "./Form";
+import { CardMedia } from '@mui/material';
+// import Form from "./Form";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
-
+const classes = makeStyles();
+// useStyles = makeStyles();
   useEffect(() => {
     console.log(localStorage.jwtToken);
     const fetchData = async () => {
@@ -39,10 +43,13 @@ const Posts = () => {
 
   return (
     <Container>
+      <CardMedia className={classes.media} image={posts.selectedFile}></CardMedia>
       <Grid container spacing={3}>
         {posts?.map((post) => (
           <Grid key={post._id} item xs={12} md={6} lg={4}>
             <Album post={post}  handleDelete={handleDelete} />{" "}
+            <Button size="small" color="primary"><ThumbUpAltIcon fontSize="small" /> Like {post.likeCount} </Button>
+
             {/*Album is imported from Cards.js. Passing props to show what we want on the page, handleDelete passed from ln 26 */}
           </Grid>
         ))}

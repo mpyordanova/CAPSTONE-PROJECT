@@ -25,11 +25,11 @@ function Menu() {
         <li><Link className='menu-list' to='/City'>City Tours</Link></li><br/>
         <li><Link className='menu-list' to='/Culture'>Culture Tours</Link></li><br/>
         <Link to='/Form'>Create an Album</Link> <br/>
-        
+        <Login/>
           </ul>):
           null}
       
-         
+      
           
         </div>
       </div>
